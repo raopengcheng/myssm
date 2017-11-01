@@ -17,4 +17,5 @@ public interface UserService {
     void save(User user);
 
     void update(User user);
+    public User getUserByNameAndPwd(String username,String password);//根据用户名和密码查询用户，登入验证
 }

@@ -30,4 +30,11 @@ public class UserLogin {
         userService.save(user);
         return "index";
     }
+
+    @RequestMapping(value="/login",method=RequestMethod.POST)
+    public String login(User user,Model model){
+        user=userService.getUserByNameAndPwd(user.getUsername(),user.getPassword());
+        model.addAttribute("username",user.getUsername());
+        return "index";
+    }
 }

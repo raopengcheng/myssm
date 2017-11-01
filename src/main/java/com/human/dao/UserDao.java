@@ -26,4 +26,6 @@ public interface UserDao {
     void save(User user);
 
     void update(User user);
+    //根据用户名和密码查询用户
+    User getUserByNameAndPwd(@Param("username") String username,@Param("password")String password);
 }
