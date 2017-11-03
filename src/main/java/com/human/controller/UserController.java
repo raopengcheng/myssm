@@ -90,4 +90,11 @@ public class UserController {
         }
         return s;
     }
+
+    @RequestMapping("/userList")
+    public String userList(Model model){
+        List<User> userList = userService.getAllUser();
+        model.addAttribute("userList", userList);
+        return "table_bootstrap";
+    }
 }
